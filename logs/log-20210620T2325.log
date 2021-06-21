@@ -1,0 +1,4 @@
+23:25:23 6761 [Test worker] INFO  - Start method -->fromToWindowsTest
+23:25:24 6993 [Test worker] INFO  - End of method -->fromToWindowsTest
+23:25:43 5167 [Test worker] INFO  - Start method -->alertTestConfirm
+23:25:57 19331 [Test worker] INFO  - End of method -->alertTestConfirm
