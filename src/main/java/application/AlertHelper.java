@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class AlertHelper extends HelperBase{
@@ -49,5 +50,33 @@ public class AlertHelper extends HelperBase{
 
     public String confirmResult(){
         return wd.findElement(By.id("confirmResult")).getText();
+    }
+
+    public void clickToOpenWindow() {
+        click(By.id("windowButton"));
+        List<String> allWindows = new ArrayList<>(wd.getWindowHandles());
+        wd.switchTo().window(allWindows.get(1));
+    }
+
+    public void clickToNewWindowMassage() {
+        click(By.id("messageWindowButton"));
+        List<String> allWindows = new ArrayList<>(wd.getWindowHandles());
+        wd.switchTo().window(allWindows.get(1));
+    }
+
+    public void clickOkButton() {
+        click(By.id("timerAlertButton"));
+        pause(5000);
+        wd.switchTo().alert().accept();
+    }
+
+    public void enterMessage() {
+        click(By.id("promtButton"));
+        wd.switchTo().alert().sendKeys("Anna");
+        wd.switchTo().alert().accept();
+    }
+
+    public String promptResult() {
+        return wd.findElement(By.id("promptResult")).getText();
     }
 }

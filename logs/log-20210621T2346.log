@@ -1,0 +1,6 @@
+23:46:10 5590 [Test worker] INFO  - Start method -->alertTest
+23:46:16 11731 [Test worker] INFO  - End of method -->alertTest
+23:46:43 4971 [Test worker] INFO  - Start method -->alertTestConfirm
+23:46:49 11180 [Test worker] INFO  - End of method -->alertTestConfirm
+23:47:05 6225 [Test worker] INFO  - Start method -->alertTest
+23:47:08 9347 [Test worker] INFO  - End of method -->alertTest

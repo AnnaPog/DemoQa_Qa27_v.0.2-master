@@ -1,9 +1,8 @@
 package application;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HelperBase {
     WebDriver wd;
@@ -58,5 +57,14 @@ public class HelperBase {
     public void hideADS(){
         JavascriptExecutor js = (JavascriptExecutor) wd;
         js.executeScript("document.querySelector('footer').style.display='none';");
+    }
+
+    public boolean isElementPresentWait(By locator, long time){
+        try {
+            new WebDriverWait(wd, time).until(ExpectedConditions.presenceOfElementLocated(locator));
+        }catch (NoSuchElementException ex){
+            return false;
+        }
+        return true;
     }
 }

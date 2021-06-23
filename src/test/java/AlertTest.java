@@ -24,4 +24,19 @@ public class AlertTest extends TestBase{
         app.alert().confirmAlert("Ok");
         Assert.assertTrue(app.alert().confirmResult().contains("Ok"));
     }
+
+    @Test
+    public void alertTestAfter5Second(){
+        app.alert().selectAlerts();
+        app.alert().clickOkButton();
+    }
+
+    @Test
+    public void alertTestPrompt(){
+        app.alert().selectAlerts();
+        app.alert().enterMessage();
+        Assert.assertTrue(app.alert().promptResult().contains("Anna"));
+    }
 }
+
+
